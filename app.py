@@ -16,7 +16,7 @@ View = 1 if View == "Yes" else 0
 
 # Predict button
 if st.button("Predict Price"):
-     features = np.array([[size, property_age, view]])
+     features = np.array([[Size, Property_age, View]])
      prediction = model.predict(features)[0]
      st.success(f"Estimated Price: UGX {prediction:,.2f}")
      st.metric(label="Predicted Price",value=f"UGX {prediction:,.0f}")
