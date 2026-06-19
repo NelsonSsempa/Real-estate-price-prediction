@@ -1,5 +1,6 @@
 #tells Jupyter to Save the code in this cell into a file named app.py
 import streamlit as st
+import numpy as np
 import joblib
 
 # Load trained model
