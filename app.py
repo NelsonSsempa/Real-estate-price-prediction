@@ -30,3 +30,10 @@ st.image(
     "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
     use_container_width=True
 )
+st.sidebar.image(
+    "https://cdn-icons-png.flaticon.com/512/69/69524.png",
+    width=100
+)
+
+st.sidebar.title("Navigation")
+st.sidebar.info("Enter property details and predict prices.")
