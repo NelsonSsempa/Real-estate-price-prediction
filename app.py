@@ -5,7 +5,7 @@ import joblib
 
 # Load trained model
 model = joblib.load("price_model.pkl")
-st.title("PRICE Prediction App")
+st.title("HOUSE PRICE Prediction App")
 st.write("Enter real estate information below:")
 
 # User inputs
@@ -20,5 +20,13 @@ if st.button("Predict Price"):
      prediction = model.predict(features)[0]
      st.success(f"Estimated Price: UGX {prediction:,.2f}")
      st.metric(label="Predicted Price",value=f"UGX {prediction:,.0f}")
+st.set_page_config(
+    page_title="House Price Predictor",
+    page_icon="🏠",
+    layout="wide"
+)
 
-
+st.image(
+    "https://images.unsplash.com/photo-1560518883-ce09059eeffa",
+    use_container_width=True
+)
