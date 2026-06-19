@@ -43,3 +43,10 @@ st.sidebar.image(
     "https://cdn-icons-png.flaticon.com/512/69/69524.png",
     width=100
 )
+st.markdown("""
+<style>
+.stApp {
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+}
+</style>
+""", unsafe_allow_html=True)
