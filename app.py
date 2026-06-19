@@ -6,7 +6,16 @@ import joblib
 # Load trained model
 model = joblib.load("price_model.pkl")
 st.title("HOUSE PRICE Prediction App")
-st.write("Enter real estate information below:")
+st.markdown("""
+<div style="
+    background-color:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+">
+<h3>Property Details</h3>
+</div>
+""", unsafe_allow_html=True)
 
 # User inputs
 Size = st.number_input("Size (sq ft)", min_value=500, max_value=5000, step=50)
@@ -34,16 +43,3 @@ st.sidebar.image(
     "https://cdn-icons-png.flaticon.com/512/69/69524.png",
     width=100
 )
-
-st.sidebar.title("Navigation")
-st.sidebar.info("Enter property details and predict prices.")
-st.markdown("""
-<div style="
-    background-color:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-">
-<h3>Property Details</h3>
-</div>
-""", unsafe_allow_html=True)
