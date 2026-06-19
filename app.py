@@ -1,30 +1,6 @@
 #tells Jupyter to Save the code in this cell into a file named app.py
 import streamlit as st
-import pandas as pd
-import numpy as np
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import r2_score, mean_squared_error
 import joblib
-
-# Load dataset
-df = pd.read_csv("real_estate.csv")
-df['view'] = df['view'].apply(lambda x: 1 if x == "Sea view" else 0)
-
-#creating a new variable and dropping 'year'
-current_year = 2026
-df['property_age'] = current_year - df['year']
-df = df.drop('year', axis=1)
-
-X = df.drop(['price'], axis=1) 
-y = df['price'] 
-
-#Train/test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-#Train model
-model = LinearRegression()
-model.fit(X_train, y_train)
 
 # Load trained model
 model = joblib.load("price_model.pkl")
