@@ -5,7 +5,10 @@ import joblib
 
 # Load trained model
 model = joblib.load("price_model.pkl")
-st.title("HOUSE PRICE Prediction App")
+st.markdown(
+    "<h1 style='text-align: center; color: #4CAF50;'>🏠 House Price Predictor</h1>",
+    unsafe_allow_html=True
+)
 st.markdown("""
 <div style="
     background-color:white;
@@ -50,7 +53,3 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
-st.markdown(
-    "<h1 style='text-align: center; color: #4CAF50;'>🏠 House Price Predictor</h1>",
-    unsafe_allow_html=True
-)
